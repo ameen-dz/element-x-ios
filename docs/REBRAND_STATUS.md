@@ -37,7 +37,7 @@ générées et les images.
    `application/json`. Apple le lit par son propre réseau (CDN) : le site doit être joignable depuis l'étranger.
 2. **Sygnal** : activer `dz.ameen.app.ios.dev` (APNs sandbox) et renommer `dz.ameen.app.ios` en
    `dz.ameen.app.ios.prod` (identifiants calculés par le code d'Element, sans modification de l'app).
-3. **Clé APNs** (compte Apple Developer) à créer et ranger dans Bitwarden, puis à déposer sur le serveur.
+3. **Capacités de l'App ID** `dz.ameen.app` : créé le 29/10 avec App Groups et Push Notifications seulement. L'app déclare aussi Associated Domains (`webcredentials:ameen.dz`) et les notifications de communication ; les extensions `dz.ameen.app.nse` et `dz.ameen.app.shareextension` ont besoin de leur propre App ID. La signature automatique de Xcode les ajoute au premier build pour un iPhone, à vérifier ce jour-là. La clé APNs existe déjà (« Sandbox & Production », 29/10) : la même sert aux deux identifiants Sygnal.
 4. **Test sur un vrai iPhone** (signé avec l'équipe `25CWAX4227`) : connexion MAS, messages, fichiers, appels,
    notifications app fermée, contrôle réseau. Le simulateur ne peut pas tester le retour de connexion ni les notifications.
 5. Relecture des textes arabes par un arabophone ; traduction anglaise et arabe du slogan à valider.
