@@ -318,10 +318,10 @@ final nonisolated class AppSettings: @unchecked Sendable {
     let elementCallBaseURL: URL = EmbeddedElementCall.appURL!
     #endif
     
-    // These are publicly availble on https://call.element.io so we don't neeed to treat them as secrets
-    let elementCallPosthogAPIHost = "https://posthog-element-call.element.io"
-    let elementCallPosthogAPIKey = "phc_rXGHx9vDmyEvyRxPziYtdVIv0ahEv8A9uLWFcCi1WcU"
-    let elementCallPosthogSentryDSN = "https://3bd2f95ba5554d4497da7153b552ffb5@sentry.tools.element.io/41"
+    // Ameen: Element Call analytics removed (Element's PostHog and Sentry).
+    let elementCallPosthogAPIHost = ""
+    let elementCallPosthogAPIKey = ""
+    let elementCallPosthogSentryDSN = ""
     
     @UserPreference
     var elementCallBaseURLOverride: URL?
