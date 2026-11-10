@@ -1,0 +1,13 @@
+/* Ameen: texts that replace Element's (looked up before Localizable.strings). */
+"ameen_welcome_tagline" = "The business messaging app you own.";
+"screen_change_server_textfield_placeholder" = "your-company.dz";
+"common_invite_unknown_profile" = "This ID can't be found, so the invite might not be received.";
+"screen_advanced_settings_element_call_base_url" = "Custom calls base URL";
+"screen_advanced_settings_element_call_base_url_description" = "Set a custom base URL for calls.";
+"screen_notification_settings_sound_element_default" = "Ameen Default";
+"screen_notification_settings_sound_element_fade" = "Ameen Fade";
+"screen_room_timeline_legacy_call" = "Unsupported call. Ask if the caller can use the Ameen app.";
+"screen_start_chat_join_room_by_address_supporting_text" = "e.g. #room-name:your-company.dz";
+"screen_change_server_title_login" = "Enter your company's domain";
+"screen_change_server_textfield_header" = "Company domain";
+"screen_change_server_textfield_footer_login" = "Your company's domain, for example your-company.dz.";

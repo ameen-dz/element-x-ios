@@ -1,0 +1,13 @@
+/* Ameen : textes qui remplacent ceux d'Element (lus avant Localizable.strings). */
+"ameen_welcome_tagline" = "La messagerie d'entreprise dont vous êtes propriétaire.";
+"screen_change_server_textfield_placeholder" = "votre-entreprise.dz";
+"common_invite_unknown_profile" = "Cet identifiant est introuvable, il est donc possible que l’invitation ne soit pas reçue.";
+"screen_advanced_settings_element_call_base_url" = "URL de base personnalisée pour les appels";
+"screen_advanced_settings_element_call_base_url_description" = "Configurer une URL de base pour les appels.";
+"screen_notification_settings_sound_element_default" = "Ameen - défaut";
+"screen_notification_settings_sound_element_fade" = "Ameen - doux";
+"screen_room_timeline_legacy_call" = "Appel non pris en charge. Demandez à l'appelant d'utiliser l'application Ameen pour vous appeler.";
+"screen_start_chat_join_room_by_address_supporting_text" = "ex : #nom-du-salon:votre-entreprise.dz";
+"screen_change_server_title_login" = "Saisissez le domaine de votre entreprise";
+"screen_change_server_textfield_header" = "Domaine de l'entreprise";
+"screen_change_server_textfield_footer_login" = "Le domaine de votre entreprise, par exemple votre-entreprise.dz.";

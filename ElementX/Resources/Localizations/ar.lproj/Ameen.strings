@@ -1,0 +1,13 @@
+/* Ameen: texts that replace Element's. To be proofread by an Arabic speaker. */
+"ameen_welcome_tagline" = "تطبيق المراسلة المؤسسية الذي تملكه.";
+"screen_change_server_textfield_placeholder" = "your-company.dz";
+"common_invite_unknown_profile" = "لم يتم العثور على هذا المعرّف، ولذا فالدعوة قد لا تكون وصلت.";
+"screen_advanced_settings_element_call_base_url" = "عنوان URL الأساسي المخصص للمكالمات";
+"screen_advanced_settings_element_call_base_url_description" = "عيّن عنوان URL أساسيًا مخصصًا للمكالمات.";
+"screen_notification_settings_sound_element_default" = "افتراضي Ameen";
+"screen_notification_settings_sound_element_fade" = "Ameen Fade";
+"screen_room_timeline_legacy_call" = "مكالمة غير مدعومة. اسأل المتصل عما إذا كان بإمكانه استخدام تطبيق Ameen.";
+"screen_start_chat_join_room_by_address_supporting_text" = "مثلاً: #room-name:your-company.dz";
+"screen_change_server_title_login" = "أدخل نطاق شركتك";
+"screen_change_server_textfield_header" = "نطاق الشركة";
+"screen_change_server_textfield_footer_login" = "نطاق شركتك، مثلاً your-company.dz.";

@@ -4323,11 +4323,12 @@ nonisolated extension L10n {
     let languages = Bundle.overrideLocalizations ?? Bundle.app.preferredLocalizations
 
     for language in languages {
-      if let translation = trIn(language, table, key, args) {
+      // Ameen: texts in Ameen.strings replace Element's.
+      if let translation = trIn(language, "Ameen", key, args) ?? trIn(language, table, key, args) {
         return translation
       }
     }
-    return Bundle.app.developmentLocalization.flatMap { trIn($0, table, key, args) } ?? key
+    return Bundle.app.developmentLocalization.flatMap { trIn($0, "Ameen", key, args) ?? trIn($0, table, key, args) } ?? key
   }
 
   private static func trIn(_ language: String, _ table: String, _ key: String, _ args: CVarArg...) -> String? {
