@@ -12,6 +12,7 @@ extension AppHooks {
     func setUp() {
         #if IS_MAIN_APP
         registerAppSettingsHook(AmeenAppSettingsHook())
+        registerCompoundHook(AmeenCompoundHook())
         #endif
     }
 }

@@ -76,32 +76,10 @@ struct AuthenticationStartScreen: View {
                     .padding(.top, 24)
                     .padding(.horizontal, 8)
             default:
+                // Ameen: welcome card instead of Element's logo, title and message.
                 Spacer()
                 
-                if verticalSizeClass == .regular {
-                    Spacer()
-                    
-                    AuthenticationStartLogo(hideBrandChrome: context.viewState.hideBrandChrome,
-                                            isOnGradient: !context.viewState.hideBrandChrome)
-                }
-                
-                Spacer()
-                
-                if !context.viewState.hideBrandChrome {
-                    VStack(spacing: 8) {
-                        Text(L10n.screenOnboardingWelcomeTitle)
-                            .font(.compound.headingLGBold)
-                            .foregroundColor(.compound.textPrimary)
-                            .multilineTextAlignment(.center)
-                            .accessibilityAddTraits(.isHeader)
-                        Text(L10n.screenOnboardingWelcomeMessage(InfoPlistReader.main.productionAppName))
-                            .font(.compound.bodyLG)
-                            .foregroundColor(.compound.textPrimary)
-                            .multilineTextAlignment(.center)
-                    }
-                    .padding()
-                    .fixedSize(horizontal: false, vertical: true)
-                }
+                AmeenWelcomeCard()
             }
             
             Spacer()
