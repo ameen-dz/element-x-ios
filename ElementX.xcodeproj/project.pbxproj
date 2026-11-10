@@ -71,6 +71,7 @@
 		07376A5274822EB45CC320C7 /* InvitedRoomProxyMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21027F05874B1BCC3E452B /* InvitedRoomProxyMock.swift */; };
 		0743CF689EBDAAF1CC0B4283 /* DeclineAndBlockScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011AFA4990C585D157829679 /* DeclineAndBlockScreenViewModel.swift */; };
 		074F741578307EF0179EE47C /* MapTilerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F2AAA3F0F2B72D2FFE4D0 /* MapTilerConfiguration.swift */; };
+		075B75EF6A5DAB742C7EB152 /* AmeenAppHooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAF7253026ADA61E1FB56A /* AmeenAppHooks.swift */; };
 		07756D532EFE33DD1FA258E5 /* GeoURITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7ED2EF5BDBAD2A7DBC4636 /* GeoURITests.swift */; };
 		07CC13C5729C24255348CBBD /* ElementCallWidgetDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309AD8BAE6437C31BA7157BF /* ElementCallWidgetDriver.swift */; };
 		0847D85F823B55A3E95D16CC /* RoomPreviewProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D94852AD5BB376CBCC3544 /* RoomPreviewProxy.swift */; };
@@ -3286,6 +3287,7 @@
 		ED49073BB1C1FC649DAC2CCD /* LocationRoomTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRoomTimelineView.swift; sourceTree = "<group>"; };
 		ED58B554B4D31EC752C0E6DB /* UserSessionManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionManagerProtocol.swift; sourceTree = "<group>"; };
 		ED60E4D2CD678E1EBF16F77A /* BlockedUsersScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUsersScreen.swift; sourceTree = "<group>"; };
+		EDDAF7253026ADA61E1FB56A /* AmeenAppHooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmeenAppHooks.swift; sourceTree = "<group>"; };
 		EDDE826EAB1BAB80C1104980 /* SpaceFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceFlowCoordinator.swift; sourceTree = "<group>"; };
 		EDE997F400545F3265935B53 /* UserSettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsTests.swift; sourceTree = "<group>"; };
 		EDF6E8208542BE7A02A94939 /* PresentationColorSchemeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationColorSchemeModifier.swift; sourceTree = "<group>"; };
@@ -7371,6 +7373,7 @@
 				C0937E3B06A8F0E2DB7C8241 /* Other */,
 				2ECFF6B05DAA37EB10DBF7E8 /* UITests */,
 				79654D131C1B234A7D034532 /* AccessibilityTests */,
+				EE9CC23CE3F73C9D343AEB7A /* Ameen */,
 				22F9F1514B91803BB4B88894 /* AppHooks */,
 				337015ADFBA3AB96660DB3A6 /* Generated */,
 				31CE4DA53232AA534057F912 /* Mocks */,
@@ -7502,6 +7505,14 @@
 				A7F3784CAF9F4CF654BC52CD /* View */,
 			);
 			path = StartChatScreen;
+			sourceTree = "<group>";
+		};
+		EE9CC23CE3F73C9D343AEB7A /* Ameen */ = {
+			isa = PBXGroup;
+			children = (
+				EDDAF7253026ADA61E1FB56A /* AmeenAppHooks.swift */,
+			);
+			path = Ameen;
 			sourceTree = "<group>";
 		};
 		EEFCB022372FE5F306ED9199 /* LeaveSpace */ = {
@@ -8827,6 +8838,7 @@
 				53C1E7F6A7D6409D89F36ED7 /* AggregatedReactionMock.swift in Sources */,
 				4219391CD2351E410554B3E8 /* AggregratedReaction.swift in Sources */,
 				64D05250CEDE8B604119F6E6 /* Alert.swift in Sources */,
+				075B75EF6A5DAB742C7EB152 /* AmeenAppHooks.swift in Sources */,
 				155063E980E763D4910EA3CF /* Analytics+SwiftUI.swift in Sources */,
 				F7567DD6635434E8C563BF85 /* AnalyticsClientProtocol.swift in Sources */,
 				114A8280D83146A26639C2A7 /* AnalyticsConfiguration.swift in Sources */,
