@@ -27,12 +27,12 @@ générées et les images.
 - Écran d'accueil Ameen en clair et en sombre ; icône et nom « Ameen » sur l'écran d'accueil d'iOS.
 - Langues embarquées : `ar`, `en`, `en-US`, `fr`.
 - Connexion : `essai.ameen.dz` trouvé par `.well-known`, enregistrement du client auprès de MAS réussi.
-  La page de connexion s'arrête ensuite, comme prévu : « Application with identifier dz.ameen.app is not
-  associated with domain ameen.dz » (fichier `apple-app-site-association` absent, voir plus bas).
+  20/11 : fichier `apple-app-site-association` lu par Apple (ouverture internationale d'AT) ; avec la signature de l'équipe Ameen,
+  iOS demande « Ameen souhaite utiliser essai.ameen.dz pour se connecter », puis la page de connexion Ameen (MAS) s'ouvre.
 
 ## Reste à faire
 
-1. **Fichier `apple-app-site-association`** sur `https://ameen.dz/.well-known/` (modèle dans le coffre :
+1. ~~Fichier `apple-app-site-association`~~ : en ligne et lu par Apple le 20/11. Était : fichier sur `https://ameen.dz/.well-known/` (modèle dans le coffre :
    `03 - Infrastructure/config/apple-app-site-association`). Servi en HTTPS, sans redirection, type
    `application/json`. Apple le lit par son propre réseau (CDN) : le site doit être joignable depuis l'étranger.
 2. **Sygnal** : activer `dz.ameen.app.ios.dev` (APNs sandbox) et renommer `dz.ameen.app.ios` en
@@ -57,7 +57,8 @@ générées et les images.
 - Écran d'accueil iPad : fond paysage de la page web (pas de version dédiée).
 - Liens « copyright » et « conditions » pointent tous deux vers `https://ameen.dz/conditions`.
 - Le bouton « Se connecter avec un code QR » reste affiché (il suppose MAS, désormais en place).
-- Build simulateur : toujours signer (`CODE_SIGN_IDENTITY="-"`) ; sans signature, l'app reste bloquée sur un faux écran de code PIN.
+- Build simulateur : toujours signer **avec l'équipe Ameen** (`CODE_SIGN_IDENTITY="-" CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM=25CWAX4227 PROVISIONING_PROFILE_SPECIFIER=""`). Sans signature, faux écran de code PIN ; sans équipe, l'app s'appelle `FAKETEAMID.dz.ameen.app` et iOS refuse le retour de connexion MAS.
+- `CFBundleName` réglé sur « Ameen » (`target.yml`) : iOS l'affiche dans « … souhaite utiliser essai.ameen.dz pour se connecter ».
 
 ## Décisions à prendre (Yasser)
 
