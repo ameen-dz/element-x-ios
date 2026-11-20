@@ -221,11 +221,8 @@ final nonisolated class AppSettings: @unchecked Sendable {
     // MARK: - Notifications
     
     var pusherAppID: String {
-        #if DEBUG
-        InfoPlistReader.main.baseBundleIdentifier + ".ios.dev"
-        #else
-        InfoPlistReader.main.baseBundleIdentifier + ".ios.prod"
-        #endif
+        // Ameen: a single app ID for every build (dz.ameen.app.ios), declared once in Sygnal.
+        InfoPlistReader.main.baseBundleIdentifier + ".ios"
     }
     
     private(set) var pushGatewayBaseURL: URL = "https://matrix.org"

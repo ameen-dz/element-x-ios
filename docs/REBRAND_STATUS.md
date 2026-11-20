@@ -12,7 +12,7 @@ générées et les images.
 | Nom, identifiants | `app.yml`, `ElementX/SupportingFiles/target.yml` | « Ameen », `dz.ameen.app`, `group.dz.ameen.app`, équipe `25CWAX4227`. Import des comptes d'Element Classic retiré (groupe d'app et trousseau de l'équipe Element) |
 | Réglages Ameen | `ElementX/Sources/Ameen/AmeenAppHooks.swift` (nouveau) | Branchés par le point d'accroche prévu par Element (`AppHooks.setUp`, `AppSettingsHook`) : liens `ameen.dz` (site, conditions, confidentialité, aide), logo MAS `https://ameen.dz/icone-app.png` |
 | Serveur | `AmeenAppHooks.swift`, `AppSettings.swift` (1 ligne) | `matrix.org` retiré. Champ vide en release ; `essai.ameen.dz` en debug (un seul endroit). Bouton « Créer un compte » masqué |
-| Notifications | `AmeenAppHooks.swift` | Passerelle `https://push.ameen.dz`. `PUSHER_APP_ID` calculé par le code d'Element : `dz.ameen.app.ios.dev` (debug, APNs sandbox) et `dz.ameen.app.ios.prod` (release) |
+| Notifications | `AmeenAppHooks.swift` | Passerelle `https://push.ameen.dz`. `PUSHER_APP_ID` unique `dz.ameen.app.ios` pour tous les builds (décision du 20/11 ; `AppSettings.pusherAppID`, une ligne) |
 | MAS (OAuth) | `AmeenAppHooks.swift`, `target.yml` | Retour `https://ameen.dz/oauth/ios/dz.ameen.app`, domaine associé `webcredentials:ameen.dz` ; domaines `element.io` et `matrix.to` retirés |
 | Télémétrie | `Components/Secrets/Secrets.swift`, `AppSettings.swift` | PostHog, Sentry, rageshake et MapTiler à `nil`. Clés PostHog et Sentry d'Element Call (écrites en dur) supprimées |
 | Couleurs | `ElementX/Sources/Ameen/AmeenColors.swift` (généré par `ameen/generate-colors.py`), `Assets.xcassets/colors` | Palette de l'app web (`ameen.css`) sur 63 couleurs Compound, via `CompoundHook`. Boutons principaux et liens en vert, accent sombre `#219A75`, fond sombre Encre. Contraste élevé inchangé |
@@ -35,8 +35,7 @@ générées et les images.
 1. ~~Fichier `apple-app-site-association`~~ : en ligne et lu par Apple le 20/11. Était : fichier sur `https://ameen.dz/.well-known/` (modèle dans le coffre :
    `03 - Infrastructure/config/apple-app-site-association`). Servi en HTTPS, sans redirection, type
    `application/json`. Apple le lit par son propre réseau (CDN) : le site doit être joignable depuis l'étranger.
-2. **Sygnal** : activer `dz.ameen.app.ios.dev` (APNs sandbox) et renommer `dz.ameen.app.ios` en
-   `dz.ameen.app.ios.prod` (identifiants calculés par le code d'Element, sans modification de l'app).
+2. ~~Sygnal~~ : fait le 20/11, un seul identifiant `dz.ameen.app.ios`, `platform: sandbox` pendant les tests depuis Xcode. **À passer en `production` le jour de TestFlight.**
 3. **Capacités de l'App ID** `dz.ameen.app` : créé le 29/10 avec App Groups et Push Notifications seulement. L'app déclare aussi Associated Domains (`webcredentials:ameen.dz`) et les notifications de communication ; les extensions `dz.ameen.app.nse` et `dz.ameen.app.shareextension` ont besoin de leur propre App ID. La signature automatique de Xcode les ajoute au premier build pour un iPhone, à vérifier ce jour-là. La clé APNs existe déjà (« Sandbox & Production », 29/10) : la même sert aux deux identifiants Sygnal.
 4. **Test sur un vrai iPhone** (signé avec l'équipe `25CWAX4227`) : connexion MAS, messages, fichiers, appels,
    notifications app fermée, contrôle réseau. Le simulateur ne peut pas tester le retour de connexion ni les notifications.
@@ -52,8 +51,7 @@ générées et les images.
 - `showCreateAccountButton` n'est pas réglable par les hooks : une ligne modifiée dans `AppSettings.swift`.
 - Textes : pas de mécanisme de surcharge chez Element. Ajout d'une table `Ameen.strings` lue en premier
   (modèle SwiftGen modifié). `InfoPlist.strings` modifié directement (« Element X » → « Ameen »).
-- `PUSHER_APP_ID` : suffixes `.ios.dev` / `.ios.prod` ajoutés par Element. Proposition : adapter Sygnal
-  plutôt que le code (point 2 ci-dessus).
+- `PUSHER_APP_ID` : Element ajoute `.ios.dev` / `.ios.prod` ; remplacé par un identifiant unique `dz.ameen.app.ios`.
 - Écran d'accueil iPad : fond paysage de la page web (pas de version dédiée).
 - Liens « copyright » et « conditions » pointent tous deux vers `https://ameen.dz/conditions`.
 - Le bouton « Se connecter avec un code QR » reste affiché (il suppose MAS, désormais en place).
@@ -62,5 +60,4 @@ générées et les images.
 
 ## Décisions à prendre (Yasser)
 
-- Sygnal : adapter les identifiants côté serveur (proposé) ou forcer `dz.ameen.app.ios` dans l'app.
 - Slogan en anglais (« The business messaging app you own. ») et en arabe : à valider.
