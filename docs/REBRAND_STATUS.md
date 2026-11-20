@@ -35,13 +35,13 @@ générées et les images.
 1. ~~Fichier `apple-app-site-association`~~ : en ligne et lu par Apple le 20/11. Était : fichier sur `https://ameen.dz/.well-known/` (modèle dans le coffre :
    `03 - Infrastructure/config/apple-app-site-association`). Servi en HTTPS, sans redirection, type
    `application/json`. Apple le lit par son propre réseau (CDN) : le site doit être joignable depuis l'étranger.
-2. ~~Sygnal~~ : fait le 20/11, un seul identifiant `dz.ameen.app.ios`, `platform: sandbox` pendant les tests depuis Xcode. **À passer en `production` le jour de TestFlight.**
+2. ~~Sygnal~~ : un seul identifiant `dz.ameen.app.ios`, `platform: production` depuis l'envoi à Apple (20/11). Les builds Xcode et simulateur (sandbox) ne reçoivent plus de notifications.
 3. **Capacités de l'App ID** `dz.ameen.app` : créé le 29/10 avec App Groups et Push Notifications seulement. L'app déclare aussi Associated Domains (`webcredentials:ameen.dz`) et les notifications de communication ; les extensions `dz.ameen.app.nse` et `dz.ameen.app.shareextension` ont besoin de leur propre App ID. La signature automatique de Xcode les ajoute au premier build pour un iPhone, à vérifier ce jour-là. La clé APNs existe déjà (« Sandbox & Production », 29/10) : la même sert aux deux identifiants Sygnal.
 4. **Test sur un vrai iPhone** (signé avec l'équipe `25CWAX4227`) : connexion MAS, messages, fichiers, appels,
    notifications app fermée, contrôle réseau. Le simulateur ne peut pas tester le retour de connexion ni les notifications.
 5. Relecture des textes arabes par un arabophone ; traduction anglaise et arabe du slogan à valider.
 6. Pages `ameen.dz/aide`, `/confidentialite`, `/conditions` (avant TestFlight).
-7. Archive TestFlight (certificats du compte Apple Developer).
+7. ~~Archive App Store~~ : envoyée à App Store Connect le 20/11 (version 26.11.0, build 1). Mac enregistré comme appareil sur le compte développeur (exigé par Xcode pour signer). Filtrage des notifications (`com.apple.developer.usernotifications.filtering`) retiré de l'extension NSE en attendant l'accord d'Apple (demande à envoyer, texte dans la fiche App Store du coffre).
 8. Fusion d'une nouvelle version amont dans `upstream-sync` puis `brand/main`, pour tester.
 
 ## Écarts avec `REBRAND_PLAN.md`
