@@ -16,7 +16,7 @@ générées et les images.
 | MAS (OAuth) | `AmeenAppHooks.swift`, `target.yml` | Retour `https://ameen.dz/oauth/ios/dz.ameen.app`, domaine associé `webcredentials:ameen.dz` ; domaines `element.io` et `matrix.to` retirés |
 | Télémétrie | `Components/Secrets/Secrets.swift`, `AppSettings.swift` | PostHog, Sentry, rageshake et MapTiler à `nil`. Clés PostHog et Sentry d'Element Call (écrites en dur) supprimées |
 | Couleurs | `ElementX/Sources/Ameen/AmeenColors.swift` (généré par `ameen/generate-colors.py`), `Assets.xcassets/colors` | Palette de l'app web (`ameen.css`) sur 63 couleurs Compound, via `CompoundHook`. Boutons principaux et liens en vert, accent sombre `#219A75`, fond sombre Encre. Contraste élevé inchangé |
-| Icône | `ElementX/Resources/AppIcon.icon` | `ameen-icone-ios-carre.svg` en PNG 1024 opaque |
+| Icône | `ElementX/Resources/AppIcon.icon` | `ameen-icone-ios-carre.svg` en PNG 1024 opaque (bulle agrandie le 24/11/2026 : 68 % de la largeur) |
 | Écran d'accueil | `ElementX/Sources/Ameen/AmeenWelcomeCard.swift` (nouveau), `AuthenticationStartScreen.swift` (un bloc), `launch-background`, `ameen-welcome-logo`, `app-logo` | Fond illustré de la page de connexion web (version portrait : `ameen/fonds/`), carte avec le logo complet v2 et le slogan de la charte. Symbole Ameen sur les écrans d'attente |
 | Textes | `ElementX/Resources/Localizations/{en,fr,ar}.lproj/Ameen.strings`, modèle SwiftGen, `InfoPlist.strings` | Textes Ameen lus avant ceux d'Element (fichiers Localazy non modifiés). Écran du serveur : « domaine de votre entreprise ». Messages de permission : « Ameen » |
 | Langues | `target.yml` | Anglais, français et arabe seulement |
